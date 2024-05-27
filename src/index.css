@@ -1,0 +1,10 @@
+@tailwind base;
+
+@layer base {
+  body {
+    @apply font-lexend text-base min-h-screen min-w-max;
+  }
+}
+
+@tailwind components;
+@tailwind utilities;
