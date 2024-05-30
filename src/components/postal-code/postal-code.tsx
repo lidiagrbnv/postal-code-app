@@ -1,17 +1,14 @@
 import { IPostCodeFormData } from "./interfaces";
 import { PostalCodeForm } from "./postal-code-form";
 import { PostalCodeOutput } from "./postal-code-output";
-import { usePostalCode } from "./use-postal-code";
+import { usePostalCode } from "@/hooks/use-postal-code";
+import { useCountryList } from "@/hooks/use-country-list";
 
 export const PostalCode = () => {
-  const {
-    getPostCode,
-    postCodeData,
-    countries,
-    isCountriesLoading,
-    isPostCodeError,
-    isPostCodeLoading,
-  } = usePostalCode();
+  const { getPostCode, postCodeData, isPostCodeError, isPostCodeLoading } =
+    usePostalCode();
+
+  const { countries, isCountriesLoading } = useCountryList();
 
   const handleGetPostCode = (data: IPostCodeFormData) => {
     getPostCode(data);

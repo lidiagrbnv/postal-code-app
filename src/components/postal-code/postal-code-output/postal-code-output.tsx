@@ -2,7 +2,7 @@ import { Map } from "@vis.gl/react-google-maps";
 import { IPostCodeData } from "@/components/postal-code/interfaces";
 
 interface IPostalCodeOutputProps {
-  postCodeData: IPostCodeData;
+  postCodeData?: IPostCodeData;
   isPostCodeError: boolean;
   isPostCodeLoading: boolean;
 }
@@ -37,7 +37,7 @@ export const PostalCodeOutput = ({
       </div>
     );
   }
-  console.log(postCodeData);
+
   const place = postCodeData.places[0];
 
   return (
